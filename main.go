@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/Devyadav0512/chat-app/pkg/websocket"
 )
@@ -38,5 +39,5 @@ func main() {
 	log.SetFlags(log.Ldate | log.Lmicroseconds | log.Llongfile)
 	log.Println("Real Time Chat App")
 	setupRoutes()
-	http.ListenAndServe(":9000", nil)
+	http.ListenAndServe(os.Getenv("PORT"), nil)
 }
