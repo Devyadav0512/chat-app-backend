@@ -37,7 +37,7 @@ func setupRoutes() {
 func main() {
 	log.SetPrefix("LOG: ")
 	log.SetFlags(log.Ldate | log.Lmicroseconds | log.Llongfile)
-	log.Println("Real Time Chat App")
+	log.Println("Real Time Chat App: ", os.Getenv("PORT"))
 	setupRoutes()
 	http.ListenAndServe(os.Getenv("PORT"), nil)
 }
